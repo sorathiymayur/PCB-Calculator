@@ -1,0 +1,326 @@
+{
+		"config": {
+			"name": "ORDERPCB",
+			"url": "https://www.orderpcbs.com/api/v2/instant-quote"
+		},
+		"data": {
+			"time": {
+				"alias": "NA",
+				"type": "datetime",
+				"options": [{
+					"label": "11/01/1992",
+					"value": 1
+				}]
+			},
+			"qty": {
+				"alise": "quantity",
+				"type": "int",
+				"options": [{
+					"label": "5",
+					"value": 5
+				}, {
+					"label": "10",
+					"value": 10
+				}]
+			},
+			"layers": {
+				"alise": "number_of_layers",
+				"type": "dic",
+				"options": [{
+					"label": "1",
+					"value": 1
+				}, {
+					"label": "2",
+					"value": 2
+				}, {
+					"label": "4",
+					"value": 4
+				}, {
+					"label": "6",
+					"value": 6
+				}, {
+					"label": "8",
+					"value": 8
+				}, {
+					"label": "10",
+					"value": 10
+				}, {
+					"label": "12",
+					"value": 12
+				}, {
+					"label": "14",
+					"value": "NA"
+				}, {
+					"label": "16",
+					"value": "NA"
+				}]
+			},
+			"boardLength": {
+				"alise": "board_height",
+				"scalar": ".1",
+				"type": "int",
+				"options": [{
+					"label": "1.2",
+					"value": 1.2
+				}, {
+					"label": "1.3",
+					"value": 1.3
+				}, {
+					"label": "1.4",
+					"value": 1.4
+				}]
+			},
+			"boardWidth": {
+				"alias": "board_width",
+				"scalar": ".1",
+				"type": "int",
+				"options": [{
+					"label": "1.2",
+					"value": 1.2
+				}, {
+					"label": "1.3",
+					"value": 1.3
+				}, {
+					"label": "1.4",
+					"value": 1.4
+				}]
+			},
+			"boardThickness": {
+				"alias": "thickness",
+				"type": "int",
+				"options": [{
+					"label": "0.4",
+					"value": 0.4
+				}, {
+					"label": "0.5",
+					"value": "NA"
+				}, {
+					"label": "0.6",
+					"value": 0.6
+				}, {
+					"label": "0.8",
+					"value": 0.8
+				}, {
+					"label": "1",
+					"value": 1
+				}, {
+					"label": "1.2",
+					"value": 1.2
+				}, {
+					"label": "1.4",
+					"value": 1.4
+				}, {
+					"label": "1.6",
+					"value": 1.6
+				}, {
+					"label": "1.8",
+					"value": 1.8
+				}, {
+					"label": "2.0",
+					"value": 2.0
+				}, {
+					"label": "2.4",
+					"value": 2.4
+				}, {
+					"label": "2.8",
+					"value": "NA"
+				}, {
+					"label": "3.2",
+					"value": "NA"
+				}]
+			},
+			"surfaceFinish": {
+				"alias": "finish",
+				"type": "dic",
+				"options": [{
+					"label": "HASL",
+					"value": "HASL"
+				}, {
+					"label": "Lead free HASL",
+					"value": "HASL_lead_free"
+				}, {
+					"label": "Immersion gold",
+					"value": "Immersion_gold"
+				}, {
+					"label": "Immersion_Silver",
+					"value": "Immersion_siler"
+				}, {
+					"label": "Immersion tin",
+					"value": "Immersion_tin"
+				}]
+			},
+			"copperWeight": {
+				"alias": "copper_weight",
+				"type": "dic",
+				"options": [{
+					"label": "1oz",
+					"value": 1
+				}, {
+					"label": "2oz",
+					"value": 2
+				}, {
+					"label": "3oz",
+					"value": 3
+				}, {
+					"label": "4oz",
+					"value": 4
+				}]
+			},
+			"minTracing": {
+				"alias": "min_trace_space",
+				"type": "dic",
+				"options": [{
+					"label": "4mil",
+					"value": 0.004
+				}, {
+					"label": "5mil",
+					"value": "NA"
+				}, {
+					"label": "6mil",
+					"value": 0.006
+				}]
+			},
+			"impedanceControl": {
+				"alias": "impedance_control",
+				"type": "dic",
+				"options": [{
+					"label": "impedance_control",
+					"value": true
+				}, {
+					"label": "no_impedance_control",
+					"value": false
+				}]
+			},
+			"numDesigns": {
+				"alias": "NA",
+				"type": "int",
+				"options": [{
+					"label": "1",
+					"value": 1
+				}, {
+					"label": "2",
+					"value": 2
+				}, {
+					"label": "3",
+					"value": 3
+				}]
+			},
+			"minHoleSize": {
+				"alias": "min_finished_hole_size",
+				"type": "dic",
+				"options": [{
+					"label": "0.1mm",
+					"value": "NA"
+				}, {
+					"label": "0.2mm",
+					"value": "NA"
+				}, {
+					"label": "0.25mm",
+					"value": 0.25
+				}, {
+					"label": "0.3mm",
+					"value": 0.25
+				}, {
+					"label": "0.35mm",
+					"value": 0.25
+				}, {
+					"label": "0.4mm",
+					"value": 0.4
+				}]
+			},
+			"boardDrill": {
+				"alias": "NA",
+				"type": "dic",
+				"options": [{
+					"label": "throughHoleVias",
+					"value": 61
+				}, {
+					"label": "blindVias",
+					"value": 60
+				}, {
+					"label": "buriedVias",
+					"value": 61
+				}]
+			},
+			"shippingTime": {
+				"alias": "true_turn_time",
+				"type": "dic",
+				"options": [{
+					"label": "3",
+					"value": 3
+				}, {
+					"label": "4",
+					"value": 4
+				}, {
+					"label": "5",
+					"value": 5
+				}, {
+					"label": "6",
+					"value": 6
+				}]
+			},
+			"shippingTo": {
+				"alias": "NA",
+				"type": "dic",
+				"options": [{
+					"label": "AFGHANISTAN",
+					"value": 1
+				}, {
+					"label": "ALBANIA",
+					"value": 2
+				}, {
+					"label": "ALGERIA",
+					"value": 3
+				}, {
+					"label": "AMERICAN SAMOA",
+					"value": 4
+				}]
+			},
+			"solderColor": {
+				"alias": "NA",
+				"type": "dic",
+				"options": [{
+					"label": "None",
+					"value": "none"
+				}, {
+					"label": "Green",
+					"value": "Green"
+				}, {
+					"label": "Black",
+					"value": "Black"
+				}, {
+					"label": "White",
+					"value": "White"
+				}, {
+					"label": "Yellow",
+					"value": "Yellow"
+				}, {
+					"label": "Red",
+					"value": "Red"
+				}, {
+					"label": "Blue",
+					"value": "Blue"
+				}]
+			},
+			"screenColor": {
+				"alias": "NA",
+				"type": "dic",
+				"options": [{
+					"label": "None",
+					"value": "none"
+				}, {
+					"label": "Green",
+					"value": "Green"
+				}, {
+					"label": "Black",
+					"value": "Black"
+				}, {
+					"label": "White",
+					"value": "White"
+				}, {
+					"label": "Yellow",
+					"value": "Yellow"
+				}]
+			}
+		}
+}
