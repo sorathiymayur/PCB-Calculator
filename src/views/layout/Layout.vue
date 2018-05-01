@@ -36,4 +36,7 @@ export default {
     height: 100%;
     width: 100%;
   }
+  #app .sidebar-container .svg-icon {
+    margin-right: 10px !important;
+}
 </style>

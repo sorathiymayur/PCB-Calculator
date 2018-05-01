@@ -22,29 +22,30 @@
       <el-checkbox class="filter-item" style='margin-left:15px;' @change='tableKey=tableKey+1' v-model="showReviewer">{{$t('table.reviewer')}}</el-checkbox>
     </div>
 
-    <el-table :key='tableKey' :data="list" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
+    <el-table :key='tableKey' :table-props="tableProps" :data="list" 
+        v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
       style="width: 100%">
-      <el-table-column align="center" :label="$t('Name')" width="90">
+      <el-table-column align="center" :label="$t('Name')" width="90" sortable="custom">
         <template slot-scope="scope">
           <span>{{scope.row.Name}}</span>
         </template>
       </el-table-column>
-      <el-table-column width="150px" align="center" :label="$t('Cost of PCB')">
+      <el-table-column width="150px" align="center" :label="$t('Cost of PCB')" sortable="custom">
         <template slot-scope="scope">
           <span>{{scope.row.CostOfPcb}}</span>
         </template>
       </el-table-column>
-      <el-table-column width="150px" align="center" :label="$t('Cost of shipping')">
+      <el-table-column width="170px" align="center" :label="$t('Cost of shipping')" sortable="custom">
         <template slot-scope="scope">
           <span>{{scope.row.CostOfShipping}}</span>
         </template>
       </el-table-column>
-      <el-table-column width="240px" align="center" :label="$t('Number of days before receiving')">
+      <el-table-column width="270px" align="center" :label="$t('Number of days before receiving')" sortable="custom">
         <template slot-scope="scope">
           <span>{{scope.row.NumberOfDay}}</span>
         </template>
       </el-table-column>
-      <el-table-column width="150px" align="center" :label="$t('Purchase Link')">
+      <el-table-column width="150px" align="center" :label="$t('Purchase Link')" sortable="custom">
         <template slot-scope="scope">
           <span>{{scope.row.PurchaseLink}}</span>
         </template>
@@ -54,7 +55,14 @@
 
   </div>
 </template>
-
+<style type="text/css">
+  .el-table__header-wrapper table{
+    width: 100% !important;
+  }
+  .el-table__body-wrapper table{
+    width: 100% !important;
+  }
+</style>
 <script>
 import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/article'
 import waves from '@/directive/waves' // 水波纹指令
@@ -147,6 +155,9 @@ export default {
     ...mapActions([
       'getPriceView'
     ]),
+    sort() {
+      console.log('Sort')
+    },
     getList() {
       this.listLoading = true
       this.getPriceView()

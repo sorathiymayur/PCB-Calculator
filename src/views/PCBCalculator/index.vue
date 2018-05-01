@@ -10,14 +10,18 @@
 		  <div class="field-body">
 		    <div class="field">
 		     	<p class="control">
-				    <div class="">
+				    <div class="Quantity">
 						 <!-- <select v-model="orderPcbRequest.data.quantity">
 						    <option v-for="qty in orderpcbView.qty.options" :value="qty.value">
 						    	{{qty.label}}
 						    </option>
 						  </select> -->
-						  <input type="radio" name="quantity" value="5" v-model="orderPcbRequest.data.quantity"><span>5</span>
-						  <input type="radio" name="quantity" value="10" v-model="orderPcbRequest.data.quantity"><span>10</span>
+						  <label class="radio inline">
+						  	<input type="radio" name="quantity" value="5" v-model="orderPcbRequest.data.quantity"><span>5</span>
+						  </label>		
+						  <label class="radio inline">
+						  	<input type="radio" name="quantity" value="10" v-model="orderPcbRequest.data.quantity"><span>10</span>
+						  </label>				  						  
 						</div>
   				</p>
 		    </div>
@@ -52,7 +56,7 @@
 		     	<p class="control">
 				    <div class="select">
 						  <select v-model="orderPcbRequest.data.board_height">
-						    <option v-for="bLength in orderpcbView.boardLength.options" v-bind:value="bLength.value">
+						    <option v-for="(bLength, index) in orderpcbView.boardLength.options" v-bind:value="bLength.value">
 						    	{{bLength.label}}
 						    </option>
 						  </select>
@@ -71,7 +75,7 @@
 		     	<p class="control">
 				    <div class="select">
 						  <select v-model="orderPcbRequest.data.board_width">
-						    <option v-for="bWidth in orderpcbView.boardWidth.options" :value="bWidth.value">
+						    <option v-for="(bWidth, index) in orderpcbView.boardWidth.options" :value="bWidth.value">
 						    	{{bWidth.label}}
 						    </option>
 						  </select>
@@ -184,7 +188,7 @@
 		    <div class="field">
 		     	<p class="control">
 				    <div class="select">
-						  <select v-model="orderPcbRequest.data.quantity">
+						  <select v-model="orderPcbRequest.data.numOfDesign">
 						    <option v-for="numDesign in orderpcbView.numDesigns.options" :value="numDesign.value">
 						    	{{numDesign.label}}
 						    </option>
@@ -337,6 +341,7 @@
 </div>	
 </template>
 
+
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import axios from 'axios'
@@ -414,13 +419,16 @@ export default {
       this.orderpcbView.minHoleSize.options[this.activeMinHoleSize].value
       this.orderPcbRequest.data.solder_color = this.orderpcbView.solderColor.options[this.activeSolderColor].value
       this.orderPcbRequest.data.screen_color = this.orderpcbView.screenColor.options[this.activeScreenColor].value
+      // this.orderPcbRequest.data.board_width = 1.2
+      // this.orderPcbRequest.data.board_height = 1.2
+      // this.orderPcbRequest.data.thickness = 0.4
     },
     save: function() {
       this.loading = true
       this.saveOrderPcb(this.orderPcbRequest)
       console.log(this.saveOrderPcbStatus)
       this.loading = false
-      this.$router.push({ path: '/price' })
+      this.$router.push({ path: '/price/price' })
     }
   },
   beforeCreate: function() {
@@ -460,4 +468,68 @@ export default {
   .solderMask-border {
     border: 1px solid #ccc;
   }
+  .field.is-horizontal {
+  	margin-top: 14px;
+  }
+  .Quantity{
+  margin-top: 8px;
+}
+.inline{
+  display: inline-block;
+}
+.inline + .inline{
+  margin-left:10px;
+}
+.radio{
+  color:#999;
+  font-size:15px;
+  position:relative;
+}
+.radio span{
+  position:relative;
+   padding-left:20px;
+}
+.radio span:after{
+  content:'';
+  width:15px;
+  height:15px;
+  border:3px solid;
+  position:absolute;
+  left:0;
+  top:1px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+  box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+.radio input[type="radio"]{
+   cursor: pointer; 
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+.radio input[type="radio"]:checked + span{
+  color:#ff9900;  
+}
+.radio input[type="radio"]:checked + span:before{
+    content:'';
+  width:5px;
+  height:5px;
+  position:absolute;
+  background:#0B8;
+  left:5px;
+  top:6px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+}
 </style>

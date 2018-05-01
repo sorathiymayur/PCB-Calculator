@@ -5,23 +5,25 @@
     <breadcrumb class="breadcrumb-container"></breadcrumb>
 
     <div class="right-menu">
-      <error-log class="errLog-container right-menu-item"></error-log>
-
-      <el-tooltip effect="dark" :content="$t('navbar.screenfull')" placement="bottom">
-        <screenfull class="screenfull right-menu-item"></screenfull>
-      </el-tooltip>
-
+     
+      
       <lang-select class="international right-menu-item"></lang-select>
 
-      <el-tooltip effect="dark" :content="$t('navbar.theme')" placement="bottom">
+      <el-dropdown>
         <!-- <theme-picker class="theme-switch right-menu-item"></theme-picker> -->
-        <select>
+            <div class="select">
+        <select >
           <option>--Select--</option>
           <option>Discourse Forum</option>
           <option>Documentation Page</option>
           <option>Login Information</option>
-        </select>
+        </select>  
+        </div>
+        
+        <el-tooltip effect="dark" :content="$t('navbar.screenfull')" placement="bottom">
+        <screenfull class="screenfull right-menu-item"></screenfull>
       </el-tooltip>
+      </el-dropdown>
 
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -93,19 +95,18 @@ export default {
   border-radius: 0px !important;
   .hamburger-container {
     line-height: 58px;
-    height: 50px;
-    float: left;
+    height: 50px;    
     padding: 0 10px;
   }
   .breadcrumb-container{
-    float: left;
+   
   }
   .errLog-container {
     display: inline-block;
     vertical-align: top;
   }
   .right-menu {
-    float: right;
+  
     height: 100%;
     &:focus{
      outline: none;
