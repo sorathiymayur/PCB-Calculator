@@ -32,6 +32,7 @@ export const constantRouterMap = [
   { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
   { path: '/404', component: _import('errorPage/404'), hidden: true },
   { path: '/401', component: _import('errorPage/401'), hidden: true },
+  { path: '/price', component: _import('PCBCalculator/price'), hidden: false },
   {
     path: '',
     component: Layout,
@@ -41,6 +42,16 @@ export const constantRouterMap = [
       component: _import('dashboard/index'),
       name: 'dashboard',
       meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+    }]
+  },
+  {
+    path: 'price',
+    component: Layout,
+    hidden: true,
+    redirect: '/PCBCalculator/price',
+    children: [{
+      path: 'price',
+      component: _import('PCBCalculator/price')
     }]
   },
   {

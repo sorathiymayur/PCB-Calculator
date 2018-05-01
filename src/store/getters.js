@@ -14,6 +14,7 @@ const getters = {
   addRouters: state => state.permission.addRouters,
   errorLogs: state => state.errorLog.logs,
   getOrderPcbResponse: state => state.orderPcbView.getOrderPcbResponse,
-  saveOrderPcbResponse: state => state.orderPcbView.saveOrderPcbResponse
+  saveOrderPcbResponse: state => state.orderPcbView.saveOrderPcbResponse,
+  getAllPriceResponse: state => state.priceView.getPriceResponse
 }
 export default getters

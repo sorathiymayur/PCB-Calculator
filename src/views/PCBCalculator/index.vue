@@ -2,23 +2,7 @@
 <div>
 
 	<div v-if="isShow">
-		<div class="field is-horizontal">
-		  <div class="field-label is-normal">
-		    <label class="label">Time: </label>
-		  </div>
-		  <div class="field-body">
-		    <div class="field">
-		     	<p class="control">
-						<div class="columns">
-		     			<div class="column is-2">
-				    		<input class="input" type="date">
-		     			</div>
-		     		</div>
-  				</p>
-		    </div>
-		  </div>
-		</div>
-
+		
 		<div class="field is-horizontal">
 		  <div class="field-label is-normal">
 		    <label class="label">Quantity: </label>
@@ -26,12 +10,14 @@
 		  <div class="field-body">
 		    <div class="field">
 		     	<p class="control">
-				    <div class="select">
-						  <select v-model="orderPcbRequest.data.quantity">
+				    <div class="">
+						 <!-- <select v-model="orderPcbRequest.data.quantity">
 						    <option v-for="qty in orderpcbView.qty.options" :value="qty.value">
 						    	{{qty.label}}
 						    </option>
-						  </select>
+						  </select> -->
+						  <input type="radio" name="quantity" value="5" v-model="orderPcbRequest.data.quantity"><span>5</span>
+						  <input type="radio" name="quantity" value="10" v-model="orderPcbRequest.data.quantity"><span>10</span>
 						</div>
   				</p>
 		    </div>
@@ -59,7 +45,7 @@
 
 		<div class="field is-horizontal">
 		  <div class="field-label is-normal">
-		    <label class="label">Border Heigth: </label>
+		    <label class="label">Board Heigth: </label>
 		  </div>
 		  <div class="field-body">
 		    <div class="field">
@@ -78,7 +64,7 @@
 
 		<div class="field is-horizontal">
 		  <div class="field-label is-normal">
-		    <label class="label">Border Width: </label>
+		    <label class="label">Board Width: </label>
 		  </div>
 		  <div class="field-body">
 		    <div class="field">
@@ -97,7 +83,7 @@
 
 		<div class="field is-horizontal">
 		  <div class="field-label is-normal">
-		    <label class="label">Border Thickness: </label>
+		    <label class="label">Board Thickness: </label>
 		  </div>
 		  <div class="field-body">
 		    <div class="field">
@@ -434,6 +420,7 @@ export default {
       this.saveOrderPcb(this.orderPcbRequest)
       console.log(this.saveOrderPcbStatus)
       this.loading = false
+      this.$router.push({ path: '/price' })
     }
   },
   beforeCreate: function() {

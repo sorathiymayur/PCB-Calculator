@@ -5,7 +5,7 @@ const List = []
 const count = 100
 
 for (let i = 0; i < count; i++) {
-  List.push(Mock.mock({
+  /* List.push(Mock.mock({
     id: '@increment',
     timestamp: +Mock.Random.date('T'),
     author: '@first',
@@ -17,6 +17,14 @@ for (let i = 0; i < count; i++) {
     'status|1': ['published', 'draft', 'deleted'],
     display_time: '@datetime',
     pageviews: '@integer(300, 5000)'
+  })) */
+
+  List.push(Mock.mock({
+    Name: '@first',
+    CostOfPcb: '@float(0, 100, 2, 2)',
+    CostOfShipping: '@float(0, 100, 2, 2)',
+    NumberOfDay: '@integer(1, 10)',
+    PurchaseLink: 'http//:www.abc.com'
   }))
 }
 

@@ -5,6 +5,7 @@ import errorLog from './modules/errorLog'
 import permission from './modules/permission'
 import tagsView from './modules/tagsView'
 import orderPcbView from './modules/orderPcb'
+import priceView from './modules/price'
 import user from './modules/user'
 import getters from './getters'
 import * as actions from './actions'
@@ -24,7 +25,8 @@ const store = new Vuex.Store({
     permission,
     tagsView,
     user,
-    orderPcbView
+    orderPcbView,
+    priceView
   },
   getters,
   mutations,
