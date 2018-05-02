@@ -11,7 +11,7 @@
 
       <el-dropdown>
         <!-- <theme-picker class="theme-switch right-menu-item"></theme-picker> -->
-            <div class="select">
+            <div class="select" style="margin-top:-5px;">
         <select >
           <option>--Select--</option>
           <option>Discourse Forum</option>
@@ -89,17 +89,21 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+.el-menu navbar el-menu--horizontal{
+  width:100%;
+}
 .navbar {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
   .hamburger-container {
     line-height: 58px;
-    height: 50px;    
+    height: 50px;
+   
     padding: 0 10px;
   }
   .breadcrumb-container{
-   
+  
   }
   .errLog-container {
     display: inline-block;
@@ -108,6 +112,8 @@ export default {
   .right-menu {
   
     height: 100%;
+    position: absolute;
+    right: 18px;
     &:focus{
      outline: none;
     }
